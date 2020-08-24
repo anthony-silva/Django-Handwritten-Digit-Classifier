@@ -1,0 +1,51 @@
+{% load static %}
+
+<div class="container" style='text-align:center;'>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+<br>
+
+<title>Handwritten Digit Classifier</title>
+
+<head>
+  <b><h1>Handwritten Digit Classifier</h1></b>
+</head>
+
+<br><br><br><br>
+  <h3 id='prediction' style='text-align:center;'>&nbsp;</h3>
+<br><br><br><br>
+
+<table width='100%'>
+  <tr>
+    <td style='text-align:center;'>
+      <h4>Draw a Single Digit on the Canvas Below</h4>
+      <canvas id="canvas" width="400" height="400"></canvas>
+      <br><br>
+      <button class="btn btn-info" id='save'>Classify</button>
+      <button class='btn btn-dark' id='clear'>Clear</button>
+    </td>
+    <td style='text-align:center;'>
+      <canvas id="myChart" height="500px;" width="500px;"></canvas>
+    </td>
+  </tr>
+</table>
+
+<script src={% static 'js/canvas.js' %}></script>
+
+<script src={% static 'js/barplot.js' %}></script>
+
+<br><br><br>
+
+{% csrf_token %}
+<script src={% static 'js/results.js' %}></script>
+
+<script src={% static 'js/clear.js' %}></script>
+
+</div>
